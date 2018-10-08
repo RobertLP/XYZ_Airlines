@@ -41,7 +41,7 @@ public class Airport
         planeRegister.remove(plane);
     }
 
-    private int getRegisterPlaneCount()
+    public int getRegisterPlaneCount()
     {
         return planeRegister.size();
     }

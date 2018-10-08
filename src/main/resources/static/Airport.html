@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Title</title>
+	    <style type="text/css" src="Style.css"></style>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	</head>
+	<body>
+
+		<div class="container">
+            <div class=“row”>
+                <div class=“col-md-12”>
+                    <button type="button" data-toggle="modal" data-target="#newAirportModal">New Airport</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table id="airportTable" class="table table-striped table-bordered nowrap" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Location</th>
+                                <th>Name</th>
+                                <th>Plane count</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- body is filled with data from the backend -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div id="newAirportModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Add Airport</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <form class="col-sm-12" data-toggle="validator" role="form" id="newAirportForm" onsubmit="return false;">
+                                <div class="form-group">
+                                    <label for="inputTitle" class="control-label">Airport location</label>
+                                    <input type="number" class="form-control" id="airportLocation" placeholder="Enter airport location"
+                                        data-error="No valid input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputTitle" class="control-label">Airport name</label>
+                                    <input type="text" class="form-control" id="airportName" placeholder="Enter airport name"
+                                        data-error="No valid input" required>
+                                </div>
+   
+                                <div class="form-group">
+                                    <button type="text" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+
+		<!-- Jquery links -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    	<!-- my Jquery links -->
+    	<script type="text/javascript" src="js/Airport.js"></script>
+	</body>
+</html>
