@@ -44,8 +44,13 @@ public class Seat
     }
 
     @Id
+    private String seatId;
     public String getSeatId()
     {
-        return Long.toString(rowNumber) + seat;
+        return seatId = Long.toString(rowNumber) + seat;
+    }
+
+    public void setSeatId(String seatId) {
+        this.seatId = seatId;
     }
 }

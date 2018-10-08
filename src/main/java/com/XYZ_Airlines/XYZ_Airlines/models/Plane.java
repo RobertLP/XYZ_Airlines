@@ -2,10 +2,7 @@ package com.XYZ_Airlines.XYZ_Airlines.models;
 
 import com.XYZ_Airlines.XYZ_Airlines.models.Enum.TravelClass;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -14,29 +11,32 @@ import java.util.List;
 @Entity
 public class Plane
 {
+    public Plane(){}
+
     public Plane(int firstRows, int firstRowSeats, int businessRows, int businessRowSeats,
                  int economyRows, int economyRowSeats)
     {
-        SetupSeats(firstRows, firstRowSeats, TravelClass.FIRST);
-        SetupSeats(businessRows, businessRowSeats, TravelClass.BUSINESS);
-        SetupSeats(economyRows, economyRowSeats, TravelClass.ECONOMY);
+        //SetupSeats(firstRows, firstRowSeats, TravelClass.FIRST);
+        //SetupSeats(businessRows, businessRowSeats, TravelClass.BUSINESS);
+        //SetupSeats(economyRows, economyRowSeats, TravelClass.ECONOMY);
         fuel = fuelTankSize;
     }
 
-    private void SetupSeats(int rows, int seats, TravelClass travelClass)
-    {
-        for(int r = 0; r < rows; r++)
-        {
-            this.seats.add(new ArrayList<Seat>());
-            ArrayList<Seat> row = this.seats.get(r);
-            for(int s = 0; s < seats; s++)
-            {
-                row.add(new Seat(r, Character.forDigit(s, 65), travelClass));
-            }
-        }
-    }
+    //private List<ArrayList<Seat>> seats = new ArrayList<ArrayList<Seat>>();
+    //private void SetupSeats(int rows, int seats, TravelClass travelClass)
+    //{
+    //    for(int r = 0; r < rows; r++)
+    //    {
+    //        this.seats.add(new ArrayList<Seat>());
+    //        ArrayList<Seat> row = this.seats.get(r);
+    //        for(int s = 0; s < seats; s++)
+    //        {
+    //            row.add(new Seat(r, Character.forDigit(s, 65), travelClass));
+    //        }
+    //    }
+    //}
 
-    private List<ArrayList<Seat>> seats = new ArrayList<ArrayList<Seat>>();
+
     private int location; // TODO: replace with with world position later
     private double fuelTankSize = 5;
     private double fuel;

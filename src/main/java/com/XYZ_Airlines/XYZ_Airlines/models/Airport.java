@@ -1,9 +1,6 @@
 package com.XYZ_Airlines.XYZ_Airlines.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,16 +9,17 @@ public class Airport
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int location;
+    private long location;
     private String name;
 
+    @OneToMany
     private List<Plane> planeRegister = new ArrayList<>();
 
-    public int getLocation() {
+    public long getLocation() {
         return location;
     }
 
-    public void setLocation(int location) {
+    public void setLocation(long location) {
         this.location = location;
     }
 
